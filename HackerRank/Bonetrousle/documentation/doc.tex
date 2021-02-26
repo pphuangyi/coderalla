@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\set{\{}{\}}
+\DeclarePairedDelimiter\paren{(}{)}
+\begin{document}
+Find the largest $i$ such that
+\[
+	n - \frac{(1 + i) \cdot i}{2} \leq \frac{(2k - (b - i) + 1)(b - i)}{2}
+\]
+which means
+\[
+	(2k - 2b)i \leq 2kb - b^2 + b - 2n
+\]
+So if $k = b$, just test whether $(1 + k)k / 2 = n$.
+And in case $b < k$, we have
+\[
+	i \leq \frac{2kb - b^2 + b - 2n}{2(k - b)}.
+\]
+
+Without loss of generality, we can assume that $i = 0$. 
+In the algorithm, we can do simply trick to fix if $i > 0$.
+Now, we want split $b$ into two halves of length $b_l = \floor{(b - 1) / 2}$ and $b_r = \floor{b / 2}$, respectively. 
+And then, we find the length $l$ of the left half of $k$, such that it is possible to split $n$ into 
+two parts $n_l$ and $n_r$ so that we can find $b_l$ distinct numbers in $\set{1, \dots, l}$ whoses sum is $n_l$, 
+and $b_r$ distinct numbers in $\set{l + 1, \dots, k}$ whose sum is $n_r$.
+Finally, the first task can be solved by calling \texttt{bonetrousle}$\paren{n_l, k, b_l}$ 
+and the second task by modifying the output of \texttt{bonetrousle}$\paren{n_l - b_rl, k - l, b_r}$.
+
+\end{document}
