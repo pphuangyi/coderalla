@@ -1,11 +1,3 @@
-++++++-+++
-++------++
-++++++-+++
-++++++-+++
-+++------+
-++++++-+-+
-++++++-+-+
-++++++++-+
-++++++++-+
-++++++++-+
-ICELAND;MEXICO;PANAMA;ALMATY
+version https://git-lfs.github.com/spec/v1
+oid sha256:ce40a5bd84c083a3cc1fa6bd6a54d6ad5dd88bc4279d41559b98cdb70c439bb5
+size 148
