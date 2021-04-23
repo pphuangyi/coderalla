@@ -17,7 +17,6 @@ def solve(arr):
         if M % prefix_sum != 0:
             continue
         if helper(arr[i + 1:], prefix_sum):
-            print(prefix_sum)
             results.append(prefix_sum)
     return results
 
